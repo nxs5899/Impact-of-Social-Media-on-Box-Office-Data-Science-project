@@ -3,6 +3,8 @@ import sqlite3
 import matplotlib.pyplot as plt
 import numpy as np
 
+
+# so this is not the best way to read the data. I made a mistake saving the tweets for each movie in seperate databases.
 conn = sqlite3.connect('twitterladyb.db')
 c = conn.cursor()
 ladyb = pd.read_sql('select * from sentiment', conn)
@@ -43,8 +45,10 @@ weekly_track = pd.read_csv('weeklysales.csv')
 
 datafrms = [ladyb, thepost, threebills, shapewater, phantom, getout, dunkirk, darkest, callme]
 
+# movie names as I saved them in the database
 m_names = ["ladyb", "thepost", "threebill", "shapeofwater", "phantom", "getout", "dunkirk", "darkest", "callme"]
 
+# in this function, I fix the mess I made before and I save everything in one dataframe.
 def prepare_weekly():
     weekly_data = pd.DataFrame(columns=['dates', 'tweet_count', 'sentiment', 'sales', 'movie'])
     for i in range(len(m_names)):
