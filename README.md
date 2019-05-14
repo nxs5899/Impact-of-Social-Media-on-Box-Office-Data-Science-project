@@ -1,4 +1,4 @@
-# Role-of-Social-Media-on-Box-Office-Data-Science-project
+# Impact-of-Social-Media-on-the-Box-Office-Data-Science-project
 
 Do you think posts and comments by audience members on social media channels like twitter, can sway the public opinion and increase or decrease the ticket sales of movies?
 
